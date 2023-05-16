@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    src: url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Roboto+Mono:wght@100;200;300;400&display=swap');
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFE4C4;
+}
+
+/* Navigation Bar */
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 16.625rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    background-color: #FFE4C4;
+}
+
+.nav-bar p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5rem;
+}
+
+.logo {
+    display: inline-block;
+    width: 8.125rem;
+    border-radius: 4.063rem;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.nav-bar a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.1rem;
+}
+
+.nav-bar a:hover {
+    background-color: #6699B3;
+    color: #FFF0DE;
+    border-radius: .5rem;
+    transition: background-color .2s linear;
+}
+
+@media only screen and (max-width: 475px) {
+    .nav-bar {
+        height: 20.25rem;
+    }
+
+    .nav-bar ul {
+        width: 100%;
+    }
+}
+
+/* Mission Section */
+
+.mission {
+    display: flex;
+    height: 18.75rem;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/ritKA_background_img.png);
+    background-size: cover;
+    border-radius: 15% 30% 20% 40%;
+}
+
+.mission-content {
+    display: flex;
+    height: 6.25rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    color: hsl(251, 40%, 25%);
+}
+
+.mission-content h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.mission-content h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 891px) {
+    .mission-content {
+        height: 12.25rem;
+    }
+}
+
+/* Our Products Section */
+
+/* repeat(auto-fill, minmax(min(12.5rem,100%), 1fr)) for column in grid template */
+
+.products {
+    display: grid;
+    grid-template: 6.25rem repeat(2, 15.625rem) / repeat(3, 12.5rem);
+    grid-template-areas: "our-product our-product our-product"
+        "product product product"
+        "product product product";
+    grid-gap: 1rem;
+    width: 100%;
+    height: auto;
+    padding: 1.875rem;
+    justify-content: center;
+}
+
+.products h2 {
+    grid-area: our-product;
+    font-family: 'Kanit', sans-serif;
+    background-color: #FFF0DE;
+    border-radius: 30% 40% / 30% 70%;
+    height: 100%;
+    width: 100%;
+    padding-top: 2.2rem;
+    align-items: center;
+    text-align: center;
+    color: #6699B3;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF0DE;
+    border-radius: 0.625rem;
+    flex-shrink: 1;
+}
+
+.product-card img {
+    border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.product-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 696px) {
+    .products {
+        display: grid;
+        grid-template: 6.25rem repeat(3, 15.625rem) / repeat(2, 12.5rem);
+        grid-template-areas: "our-product our-product"
+            "product product"
+            "product product"
+            "product product";
+    }
+
+    .products h2 {
+        grid-area: our-product;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .products {
+        display: grid;
+        grid-template: 6.25rem repeat(6, 20.625rem) / 15.5rem;
+        grid-template-areas: "our-product"
+            "product"
+            "product"
+            "product"
+            "product"
+            "product"
+            "product";
+    }
+
+    .products h2 {
+        grid-area: our-product;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+
+/* need to look into how to shrink a css grid for a mobile viewport */
+
+/* @media only screen and (max-width: 425px) {
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        align-items: center;
+    }
+} */
+
+/* Our Team Section */
+
+.our-team {
+    display: grid;
+    grid-template: 6.25rem 25.5rem / repeat(3, 15.625rem);
+    grid-template-areas: "our-team our-team our-team"
+        "team team team";
+    grid-gap: 1rem;
+    width: 100%;
+    height: auto;
+    padding: 1.875rem;
+    justify-content: center;
+}
+
+.our-team h2 {
+    grid-area: our-team;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Kanit', sans-serif;
+    background-color: #FFF0DE;
+    border-radius: 30% 40% / 30% 70%;
+    height: 100%;
+    width: 100%;
+    padding-top: 2.2rem;
+    color: #6699B3;
+    text-align: center;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF0DE;
+    border-radius: 0.625rem;
+}
+
+.team-card img {
+    width: 100%;
+    height: 19.25rem;
+    object-fit: cover;
+    display: flex;
+    border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.hila {
+    object-position: left;
+}
+
+.team-card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-grow: .5;
+    padding-top: 0.8rem;
+}
+
+.member-name {
+    font-family: 'Kanit', sans-serif;
+}
+
+.member-title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 845px) {
+    .our-team {
+        display: grid;
+        grid-template: 6.25rem repeat(3, 25.5rem) / 15.625rem;
+        grid-template-areas: "our-team"
+            "team"
+            "team"
+            "team";
+    }
+
+    .our-team h2 {
+        grid-area: our-team;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+/* Contact Section */
+
+.contact {
+    display: flex;
+    height: 6.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    width: auto;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    color: #6699B3;
+    background-color: #FFF0DE;
+    width: 40%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30% 40% / 30% 70%;
+}
+
+.contact h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.5rem;
+}
+
+.contact p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 565px) {
+    .contact-content h2 {
+        font-size: 1rem;
+    }
+    
+    .contact-content p {
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (max-width: 359px) {
+    .contact-content p {
+        font-size: .7rem;
+    }
+}
+
+/* Footer-Copyright Section */
+
+footer {
+    display: flex;
+    padding: 1rem;
+    justify-content: left;
+    font-size: .75rem;
+    background-color: #B39878;
+}
+
+footer p {
+    font-family: 'Kanit', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        justify-content: center;
+    }
+}
