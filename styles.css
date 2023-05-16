@@ -119,8 +119,6 @@
 
 /* Our Products Section */
 
-/* repeat(auto-fill, minmax(min(12.5rem,100%), 1fr)) for column in grid template */
-
 .products {
     display: grid;
     grid-template: 6.25rem repeat(2, 15.625rem) / repeat(3, 12.5rem);
@@ -204,16 +202,6 @@
         justify-self: center;
     }
 }
-
-
-/* need to look into how to shrink a css grid for a mobile viewport */
-
-/* @media only screen and (max-width: 425px) {
-    .products {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        align-items: center;
-    }
-} */
 
 /* Our Team Section */
 
